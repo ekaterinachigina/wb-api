@@ -33,7 +33,7 @@ return [
     // Конфиг сервиса из .env
     'wb' => [
         'host' => env(key: 'WB_HOST'),
-         'key' => env(key: 'WB_KEY'),
+        'key' => env(key: 'WB_KEY'),
     ]
 
 ];

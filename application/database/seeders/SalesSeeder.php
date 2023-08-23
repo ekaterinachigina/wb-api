@@ -13,6 +13,7 @@ class SalesSeeder extends Seeder
     /**
      * Run the database seeds.
      */
+    // Выполняет запросы к API с установленным временным диапазоном
     public function run(): void
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
@@ -37,6 +38,7 @@ class SalesSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 
+    // Принимает полученные данные и передает каждый элемент в seedItem()
     public function onData($data) {
         $count = count($data);
 
@@ -47,6 +49,7 @@ class SalesSeeder extends Seeder
 //        var_dump($data);
     }
 
+    // Заполнение полей таблицы
     public function seedItem($item) {
 
         $sale = Sale::query()

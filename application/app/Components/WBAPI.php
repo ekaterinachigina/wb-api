@@ -5,7 +5,7 @@ namespace App\Components;
 use GuzzleHttp\Client;
 
 class WBAPI {
-    // новый клиент API
+    // Новый клиент API
     public function getClient() {
         // Хост API
         $baseUri = config('services.wb.host');
@@ -17,6 +17,7 @@ class WBAPI {
         return $client;
     }
 
+    // Принимает и возвращает данные
     public function request($path, $data = []) {
         $client = $this->getClient();
 
@@ -42,6 +43,7 @@ class WBAPI {
         return $data;
     }
 
+    // Получает в цикле ссылку на данные
     public function iterate($path, $data, $onData) {
         $page = 1;
 
